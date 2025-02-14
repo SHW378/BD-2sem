@@ -68,6 +68,6 @@ begin
 end;
 go
 
-declare @Total int
+declare @TotalIngresos =  int
 go
 exec GetIngresosCat 'Zapatos', @Total output
