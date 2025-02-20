@@ -146,4 +146,4 @@ ELSE
 	BEGIN
  set @contador = (select top 1 ID from Datos order by ID Desc) +1
  insert into Datos(ID, Dato) Values (@contador , @dato);
-END
+END;

@@ -15,7 +15,7 @@ FechaEstimadaLlegada varchar(250)
 create table Proveedores (
 id int primary key not null,
 Nombre_proveedor varchar(250),
-Dirección varchar(250),
+DirecciÃ²n varchar(250),
 Email varchar(250),
 Telefono varchar(250),
 ProductoID int foreign key references Producto(id)
@@ -66,31 +66,31 @@ ClienteID int foreign key references Clientes(id)
 
 INSERT INTO Producto (id, Nombre, Precio, Descripcion, FechaEstimadaLlegada) VALUES 
 (1, 'Camisa Blanca', 20, 'Camisa de manga larga blanca', '2025-03-01'),
-(2, 'Pantalón Azul', 30, 'Pantalón de tela azul', '2025-04-15'),
+(2, 'Pantalï¿½n Azul', 30, 'Pantalï¿½n de tela azul', '2025-04-15'),
 (3, 'Falda Negra', 25, 'Falda de uniforme negra', '2025-02-20'),
 (4, 'Jersey Gris', 35, 'Jersey de lana gris', '2025-05-10'),
 (5, 'Chaqueta Azul Marino', 50, 'Chaqueta de uniforme azul marino', '2025-06-05');
 
-INSERT INTO Proveedores (id, Nombre_proveedor, Dirección, Email, Telefono, ProductoID) VALUES 
+INSERT INTO Proveedores (id, Nombre_proveedor, Direcciï¿½n, Email, Telefono, ProductoID) VALUES 
 (1, 'Textiles del Norte', '123 Calle Principal, CDMX', 'contacto@textilesdelnorte.com', '555-1234', 1),
-(2, 'Uniformes y Más', '456 Avenida Central, Monterrey', 'ventas@uniformesymas.com', '555-5678', 2),
-(3, 'Confecciones García', '789 Boulevard Reforma, Guadalajara', 'info@confeccionesgarcia.com', '555-9101', 3),
+(2, 'Uniformes y Mï¿½s', '456 Avenida Central, Monterrey', 'ventas@uniformesymas.com', '555-5678', 2),
+(3, 'Confecciones Garcï¿½a', '789 Boulevard Reforma, Guadalajara', 'info@confeccionesgarcia.com', '555-9101', 3),
 (4, 'Ropa Corporativa', '1010 Calle Industrial, Puebla', 'servicio@ropacorporativa.com', '555-1121', 4),
-(5, 'Distribuciones Patria', '1111 Avenida de la Moda, Querétaro', 'contacto@distribucionespatria.com', '555-1314', 5);
+(5, 'Distribuciones Patria', '1111 Avenida de la Moda, Querï¿½taro', 'contacto@distribucionespatria.com', '555-1314', 5);
 
 INSERT INTO Inventario (id, Telas, MaquinasCosturas, CantidadMateriales, ProveedorID, ProductoID) VALUES 
-(1, 'Tela Algodón Blanca', 10, 100, 1, 1),
-(2, 'Tela Poliéster Azul', 15, 200, 2, 2),
+(1, 'Tela Algodï¿½n Blanca', 10, 100, 1, 1),
+(2, 'Tela Poliï¿½ster Azul', 15, 200, 2, 2),
 (3, 'Tela Seda Negra', 5, 150, 3, 3),
 (4, 'Tela Lana Gris', 20, 50, 4, 4),
-(5, 'Tela Algodón Azul Marino', 12, 300, 5, 5);
+(5, 'Tela Algodï¿½n Azul Marino', 12, 300, 5, 5);
 
 INSERT INTO Clientes (id, Nombre_Cliente, Apellido_cliente, RegularidadCompras, Contacto) VALUES 
-(1, 'Carlos', 'Hernández', 3, 'carlos.hernandez@example.com'),
-(2, 'María', 'García', 2, 'maria.garcia@example.com'),
-(3, 'Juan', 'Pérez', 4, 'juan.perez@example.com'),
-(4, 'Ana', 'López', 1, 'ana.lopez@example.com'),
-(5, 'Luis', 'Martínez', 5, 'luis.martinez@example.com');
+(1, 'Carlos', 'Hernï¿½ndez', 3, 'carlos.hernandez@example.com'),
+(2, 'Marï¿½a', 'Garcï¿½a', 2, 'maria.garcia@example.com'),
+(3, 'Juan', 'Pï¿½rez', 4, 'juan.perez@example.com'),
+(4, 'Ana', 'Lï¿½pez', 1, 'ana.lopez@example.com'),
+(5, 'Luis', 'Martï¿½nez', 5, 'luis.martinez@example.com');
 
 INSERT INTO Ventas (id, Cantidad, FechaVenta, MontoTotal, ClienteID, ProductoID) VALUES 
 (1, 10, '2025-01-15', 200, 1, 1),
@@ -107,10 +107,10 @@ INSERT INTO Pedidos (id, Fecha_pedido, Monto_total, ProductoID, ClientesID) VALU
 (5, '2025-01-20', 600, 5, 5);
 
 INSERT INTO Empleados (id, Nombre_empleado, Apellido_empleado, RolDeEmpleado, ClienteID) VALUES 
-(1, 'Laura', 'Sánchez', 'Vendedora', 1),
-(2, 'Miguel', 'Ramírez', 'Soporte Técnico', 2),
+(1, 'Laura', 'Sï¿½nchez', 'Vendedora', 1),
+(2, 'Miguel', 'Ramï¿½rez', 'Soporte Tï¿½cnico', 2),
 (3, 'Andrea', 'Torres', 'Gerente', 3),
-(4, 'Roberto', 'Gómez', 'Vendedor', 4),
-(5, 'Lucía', 'Morales', 'Soporte Técnico', 5);
+(4, 'Roberto', 'Gï¿½mez', 'Vendedor', 4),
+(5, 'Lucï¿½a', 'Morales', 'Soporte Tï¿½cnico', 5);
 
 select Clientes.Nombre_Cliente, Clientes.Apellido_cliente, sum(Ventas.Cantidad) as total_Productos_Vendidos from Ventas join Clientes on Ventas.ClienteID = Clientes.id group by Clientes.Nombre_Cliente, Clientes.Apellido_Cliente order by Total_Productos_Vendidos desc
