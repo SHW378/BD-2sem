@@ -1,0 +1,13 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "username": "your_username",
+    "password": "your_password",
+    "database": "your_database"
+  },
+  "options": {
+    "timeout": 30000,
+    "logLevel": "info"
+  }
+}
