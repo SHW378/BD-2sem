@@ -32,6 +32,9 @@ INSERT INTO Productos (Nombre_Prod, Precio) VALUES
 ('Arroz', 18);
 GO
 
+create procedure InsertarProd
+
+
 create table Proveedores (
 ID int primary key identity(1,1) not null,
 Nombre_Prov varchar(250),
@@ -47,6 +50,7 @@ INSERT INTO Proveedores (Nombre_Prov, Telefono, email, Dirección) VALUES
 ('Proveedor 4', '555-4321', 'proveedor4@example.com', 'Camino Vecinal 101'),
 ('Proveedor 5', '555-6543', 'proveedor5@example.com', 'Avenida Central 202');
 go
+
 create table Inventario (
 ID int primary key identity(1,1) not null,
 NombreProd varchar(250),
