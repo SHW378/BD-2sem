@@ -366,3 +366,4 @@ begin
     delete from Ventas where ID = @ID
 end
 go
+exec DeleteVent 1
