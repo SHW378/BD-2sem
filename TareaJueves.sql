@@ -1,0 +1,1 @@
+-- Inventar un caso de uso con SP, funcion de tabla, funcion con parametro 
