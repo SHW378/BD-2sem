@@ -46,3 +46,7 @@ begin
 end
 print dbo.sumarnums(5,7)
 go
+
+-- SP
+-- Funcion tabla
+-- Funcion parametro
