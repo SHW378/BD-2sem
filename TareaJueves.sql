@@ -1,4 +1,9 @@
 -- Inventar un caso de uso con SP, funcion de tabla, funcion con parametro 
+create database Practica3
+go
+
+use Practica3
+go
 
 create table Clientes (
     ID int primary key identity(1,1) not null,
@@ -74,8 +79,10 @@ begin
     insert into Clientes (Nombre, Email) values (@Nombre, @Email)
 end
 go
-exec InsertarCliente 'Pedro Ramirez'
-GO
+exec InsertarCliente 'Pedro Ramirez', 'Pedro.Ramirez@@example.com'
+go
+select * from clientes
+go
 create procedure CrearPedido
     @ClienteID int,
     @FechaPedido varchar(250)
@@ -87,6 +94,9 @@ go
 
 exec Crearpedido 6, '2025-02-26'
 go
+select * from Pedidos
+go
+
 create function CalcularTotalDePedido
 (
     @PedidoID int
@@ -102,4 +112,6 @@ begin
 end
 go
 
-select * from dbo.CalcularTotalDePedido(6)
+select dbo.CalcularTotalDePedido(1) as TotalPedido1
+
+select * from DetallesPedido
