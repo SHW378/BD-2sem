@@ -24,6 +24,8 @@ create  table Empleados(
 	Departamento varchar(50)
 );
 
+Alter table Empleados add Estatus varchar(15) default 'Activo'
+
 create table Empleados_log(
 	ID int primary key identity(1,1),
 	EmpleadoID int,
@@ -43,11 +45,14 @@ begin
 end;
 
 --Test
+drop table Empleados
+delete from Empleados where id =3
 select * from Empleados
 select * from Empleados_log
 
-insert into Empleados (Nombre, Departamento) values ('Roberto Martinez', 'Ventas')
+insert into Empleados (Nombre, Departamento) values ('Gerardo', 'Ventas')
 go
+
 --Trigger que cuando se actualice un empleado, cree un log con accion 'Empleado Actualizado'
 create trigger trg_AfterUpdateEmpleado
 on Empleados
@@ -59,3 +64,20 @@ end;
 
 update Empleados set Departamento = 'finanzas' where id = '2'
 go
+
+--Insted of
+--Tenemos que evitar que se eliminen registros de empleados, Cuando alguien intente eliminar un empleado, Solo se tiene que desactivar mas no eliminar 
+-- == Eliminación lógica
+go
+
+create trigger trg_PrevenirDeleteEmpleado
+on Empleados
+instead of delete 
+as
+begin
+	update Empleados set Estatus = 'Inactivo' where id in (select id from deleted) 
+end;
+
+select * from Empleados
+
+delete from Empleados where id = 7
