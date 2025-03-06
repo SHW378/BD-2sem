@@ -1,17 +1,17 @@
 /*Crea un procedimiento almacenado avanzado que realice las siguientes funciones:
     1.  Reciba como entrada:
-    •   El nombre del producto (@Producto)
-    •   La categoría (@Categoria)
-    •   La cantidad (@Cantidad)
-    •   El precio unitario (@PrecioUnitario)
+    ï¿½   El nombre del producto (@Producto)
+    ï¿½   La categoria (@Categoria)
+    ï¿½   La cantidad (@Cantidad)
+    ï¿½   El precio unitario (@PrecioUnitario)
     2.  Antes de insertar el producto en la tabla Ventas:
-    •   Si la cantidad o el precio es menor o igual a 0,
-    el procedimiento debe cancelar la operación y devolver un mensaje de error.
-    •   Si el producto ya existe en la misma categoría,
+    ï¿½   Si la cantidad o el precio es menor o igual a 0,
+    el procedimiento debe cancelar la operacion y devolver un mensaje de error.
+    ï¿½   Si el producto ya existe en la misma categoria,
     el procedimiento debe sumar la cantidad en lugar de insertar una nueva fila.
     3.  Devuelva como salida:
-    •   El Id de la venta recién insertada o actualizada (@IdVentaSalida).
-    •   Un mensaje de confirmación (@Mensaje)
+    ï¿½   El Id de la venta recien insertada o actualizada (@IdVentaSalida).
+    ï¿½   Un mensaje de confirmacion (@Mensaje)
 */
 
 
