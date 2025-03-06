@@ -48,26 +48,26 @@ create procedure  sp_DeTiendita
 )
 as
 BEGIN
-if @Cantidad <= 0 or @PrecioUnitario <= 0
-begin
-set @Mensaje = 'La cantidad y el precio unitario deben ser mayores a 0.'
+    if @Cantidad <= 0 or @PrecioUnitario <= 0
+begin   
+    set @Mensaje = 'La cantidad y el precio unitario deben ser mayores a 0.'
 END
 else 
 BEGIN
-if exists (select 1 from Ventas where Producto = @Producto and Categoria = @Categoria)
+    if exists (select 1 from Ventas where Producto = @Producto and Categoria = @Categoria)
 begin
-update Ventas
-set Cantidad = Cantidad + @Cantidad
-where Producto = @Producto and Categoria = @Categoria
-select @IdVentaSalida = ID from Ventas where Producto = @Producto and Categoria = @Categoria
-set @Mensaje = 'Venta actualizada.'
+    update Ventas
+        set Cantidad = Cantidad + @Cantidad
+        where Producto = @Producto and Categoria = @Categoria
+        select @IdVentaSalida = ID from Ventas where Producto = @Producto and Categoria = @Categoria
+        set @Mensaje = 'Venta actualizada.'
 end
 else 
 BEGIN
-insert into Ventas (Producto, Categoria, Cantidad, PrecioUnitario)
-values (@Producto, @Categoria, @Cantidad, @PrecioUnitario)
-set @IdVentaSalida = scope_identity()
-set @Mensaje = 'Venta insertada.'
+    insert into Ventas (Producto, Categoria, Cantidad, PrecioUnitario)
+    values (@Producto, @Categoria, @Cantidad, @PrecioUnitario)
+    set @IdVentaSalida = scope_identity()
+    set @Mensaje = 'Venta insertada.'
 END
 END
 END
