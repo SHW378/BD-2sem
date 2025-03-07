@@ -7,7 +7,7 @@ create function GetVentasWhereID1()
 returns table 
 as
 return(Select * from ventas where idVenta= 1)
-
+go
 -- como usar funciones select
 select * from GetVentasWhereID1()
 go
