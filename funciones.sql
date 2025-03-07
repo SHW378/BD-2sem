@@ -31,6 +31,7 @@ go
 -- Output: n1+n2
 -- Sin select
 go
+
 create function sumarnums
 (
 	@n1 int,
@@ -44,6 +45,7 @@ begin
 	set @resultado = @n1 + @n2
 	return @resultado
 end
+go
 print dbo.sumarnums(5,7)
 go
 
