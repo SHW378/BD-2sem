@@ -28,7 +28,7 @@ GO
 use Tiendita
 GO
 
-CREATE TABLE Producto (
+CREATE TABLE Ventas (
 	Id int primary key identity(1,1) not null,
     Producto varchar(250),
 	Cantidad int, 
@@ -81,3 +81,6 @@ exec sp_DeTiendita 'Laptop', 'Electrónica', 5, 1500.00, @IdVentaSalida output, 
 
 print 'ID de la venta: ' + cast(@IdVentaSalida as varchar)
 print 'Mensaje: ' + @Mensaje
+
+
+select * from Ventas
