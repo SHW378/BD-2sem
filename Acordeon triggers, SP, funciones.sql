@@ -482,6 +482,7 @@ go
 --SP13 info Clientes y productos mediante join
 create procedure SP13_ClientesYPedidos
 as
+
 begin
     select c.ID as ClienteID, c.Nombre, c.Direccion, c.Telefono, c.Correo, 
            v.ID as VentaID, p.Nombre as ProductoNombre, p.Marca, p.Precio, p.Existencias
