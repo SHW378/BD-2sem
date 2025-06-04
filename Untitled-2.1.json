@@ -1,0 +1,52 @@
+{
+  "_id": ObjectId("605c72f2044444f12b5d4c01"),
+  "Nombre": "Camisa Blanca",
+  "Precio": 20,
+  "Descripcion": "Camisa de manga larga blanca",
+  "FechaEstimadaLlegada": "2025-03-01"
+}
+{
+  "_id": ObjectId("605c72f2044444f12b5d4c02"),
+  "Nombre_proveedor": "Textiles del Norte",
+  "Direccion": "123 Calle Principal, CDMX",
+  "Email": "contacto@textilesdelnorte.com",
+  "Telefono": "555-1234",
+  "ProductoID": ObjectId("605c72f2044444f12b5d4c01")
+}
+{
+  "_id": ObjectId("605c72f2044444f12b5d4c03"),
+  "Telas": "Tela Algodón Blanca",
+  "MaquinasCosturas": 10,
+  "CantidadMateriales": 100,
+  "ProveedorID": ObjectId("605c72f2044444f12b5d4c02"),
+  "ProductoID": ObjectId("605c72f2044444f12b5d4c01")
+}
+{
+  "_id": ObjectId("605c72f2044444f12b5d4c04"),
+  "Nombre_Cliente": "Carlos",
+  "Apellido_cliente": "Hernandez",
+  "RegularidadCompras": 3,
+  "Contacto": "carlos.hernandez@example.com"
+}
+{
+  "_id": ObjectId("605c72f2044444f12b5d4c05"),
+  "Cantidad": 10,
+  "FechaVenta": "2025-01-15",
+  "MontoTotal": 200,
+  "ClienteID": ObjectId("605c72f2044444f12b5d4c04"),
+  "ProductoID": ObjectId("605c72f2044444f12b5d4c01")
+}
+{
+  "_id": ObjectId("605c72f2044444f12b5d4c06"),
+  "Fecha_pedido": "2025-01-01",
+  "Monto_total": 200,
+  "ProductoID": ObjectId("605c72f2044444f12b5d4c01"),
+  "ClientesID": ObjectId("605c72f2044444f12b5d4c04")
+}
+{
+  "_id": ObjectId("605c72f2044444f12b5d4c07"),
+  "Nombre_empleado": "Laura",
+  "Apellido_empleado": "Sánchez",
+  "RolDeEmpleado": "Vendedora",
+  "ClienteID": ObjectId("605c72f2044444f12b5d4c04")
+}
